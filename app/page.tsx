@@ -29,12 +29,28 @@ export default function Home() {
   }, [date, task]);
 
   return (
-    <main className=" flex justify-center ">
-      <div className="overflow-hidden flex justify-center items-center flex-col bg-gray-700 mt-20 object-center p-10 rounded-xl sm:w-[50%] sm:h-[75%]">
+    <main className=" flex justify-center">
+      <div className=" flex justify-center items-center flex-col bg-gray-700 mt-20 object-center p-10 rounded-xl sm:w-[50%] sm:h-[75%] ">
         <DateCard setDate={setDate} date={date} />
         <TaskCard task={task} setTask={setTask} />
         <div className="h-1 w-full bg-black" />
-        <Tasks />
+        <div className="overflow-y-auto w-full max-h-[400px]">
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+          <Tasks />
+        </div>
       </div>
     </main>
   );

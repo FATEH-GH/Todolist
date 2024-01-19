@@ -12,14 +12,16 @@ import { MdPushPin } from "react-icons/md";
 
 const Tasks = () => {
   return (
-    <div className="flex gap-6 my-10 text-white items-center justify-center">
-      <Checkbox id="task" />
-      <label
-        htmlFor="task"
-        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-      >
-        Accept terms and conditions
-      </label>
+    <div className="flex items-center justify-between w-full p-2 my-5 text-white  ">
+      <div className="flex gap-4">
+        <Checkbox id="task" className="bg-gray-600" />
+        <label
+          htmlFor="task"
+          className="text-md font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          Accept terms and conditions
+        </label>
+      </div>
       <DropdownMenu>
         <DropdownMenuTrigger>
           <ThreeDots />
