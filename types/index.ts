@@ -4,7 +4,6 @@ export interface DateCardProps {
 }
 
 export interface TaskCardProps {
-  task: string;
   setTask: (task: string) => void;
 }
 

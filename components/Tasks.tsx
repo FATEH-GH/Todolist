@@ -19,8 +19,8 @@ const Tasks = ({ ischecked }: tasksProps) => {
       setTasks(data!);
     };
     fetchdata();
-  }, []);
-  console.log("the check", ischecked);
+  }, [tasks]);
+  // console.log("the check", ischecked);
 
   return (
     <div>
@@ -32,7 +32,7 @@ const Tasks = ({ ischecked }: tasksProps) => {
                   key={index}
                   initial={{ x: 100 }}
                   animate={{ x: 0 }}
-                  transition={{ ease: "easeInOut", duration: 0.5 }}
+                  transition={{ duration: 0.1 * (index + 1) }}
                 >
                   <Task
                     task={singletask.task}
@@ -51,7 +51,8 @@ const Tasks = ({ ischecked }: tasksProps) => {
                   key={index}
                   initial={{ x: 100 }}
                   animate={{ x: 0 }}
-                  transition={{ ease: "easeInOut", duration: 0.5 }}
+                  transition={{ duration: 0.1 * (index + 1) }}
+                  exit={{ x: -100 }}
                 >
                   <Task
                     task={singletask.task}
