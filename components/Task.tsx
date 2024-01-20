@@ -16,7 +16,6 @@ import supabase from "@/utils";
 
 const Task = ({ task, id, ispinned, ischecked, settasks }: TaskProps) => {
   const [isPinned, setIsPinned] = useState<boolean>(ispinned!);
-  // console.log("the pinn", ispinned);
   const [isChecked, setIsChecked] = useState(ischecked);
 
   const handledelete = async (id: number) => {

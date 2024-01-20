@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Task from "./Task";
 import supabase from "@/utils";
-import { TaskProps } from "@/types";
 import { motion } from "framer-motion";
 
 interface tasksProps {
@@ -20,7 +19,6 @@ const Tasks = ({ ischecked }: tasksProps) => {
     };
     fetchdata();
   }, [tasks]);
-  // console.log("the check", ischecked);
 
   return (
     <div>

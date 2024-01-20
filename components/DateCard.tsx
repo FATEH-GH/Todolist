@@ -1,7 +1,4 @@
 import { DateCardProps } from "@/types";
-import { Button } from "./ui/button";
-import ArrowLeft from "./ArrowLeft";
-import ArrowRight from "./ArrowRight";
 import { format } from "date-fns";
 
 const DateCard = ({ setDate, date }: DateCardProps) => {
