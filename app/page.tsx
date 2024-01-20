@@ -17,38 +17,35 @@ import ThreeDots from "@/components/ThreeDots";
 import { Button } from "@/components/ui/button";
 import DateCard from "@/components/DateCard";
 import TaskCard from "@/components/TaskCard";
+import Task from "@/components/Task";
+import supabase from "@/utils";
 import Tasks from "@/components/Tasks";
 
 export default function Home() {
-  // const [checked, setChecked] = useState(true);
   const [date, setDate] = useState<Date>(new Date());
   const [task, setTask] = useState<string>("");
+
   useEffect(() => {
+    const fetchdata = async () => {
+      let { data, error } = await supabase.from("Tasks").select();
+      console.log(data![0]);
+      console.log(error);
+    };
+    // fetchdata();
     // console.log("the main page");
-    console.log("here's a task", task);
+    // console.log("here's a task", task);
   }, [date, task]);
 
   return (
     <main className=" flex justify-center">
-      <div className=" flex justify-center items-center flex-col bg-gray-700 mt-20 object-center p-10 rounded-xl sm:w-[50%] sm:h-[75%] ">
+      <div className=" flex justify-center items-center flex-col bg-gray-700 mt-20 object-center p-2 sm:p-10 mx-2 rounded-xl sm:w-[50%] sm:h-[75%] ">
         <DateCard setDate={setDate} date={date} />
         <TaskCard task={task} setTask={setTask} />
+        <div className="overflow-y-auto w-full max-h-[400px]">
+          <Tasks ischecked={true} />
+        </div>
         <div className="h-1 w-full bg-black" />
         <div className="overflow-y-auto w-full max-h-[400px]">
-          <Tasks />
-          <Tasks />
-          <Tasks />
-          <Tasks />
-          <Tasks />
-          <Tasks />
-          <Tasks />
-          <Tasks />
-          <Tasks />
-          <Tasks />
-          <Tasks />
-          <Tasks />
-          <Tasks />
-          <Tasks />
           <Tasks />
         </div>
       </div>
