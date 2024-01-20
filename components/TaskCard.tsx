@@ -1,6 +1,6 @@
 import TaskIcon from "@/components/TaskIcon";
 import { TaskCardProps } from "@/types";
-import { FormEvent, FormEventHandler, useState } from "react";
+import { useState } from "react";
 import { Button } from "./ui/button";
 import supabase from "@/utils";
 

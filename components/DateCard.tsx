@@ -15,7 +15,7 @@ const DateCard = ({ setDate, date }: DateCardProps) => {
   return (
     <div className="flex gap-8 overflow-hidden">
       <div className="flex flex-col gap-4 itmes-center justify-center">
-        <h1 className="font-bold text-white text-center text-3xl sm:text-5xl  ">
+        <h1 className="font-bold text-white text-center text-3xl sm:text-5xl mt-4  ">
           {days[date!.getDay()]}
         </h1>
         <p className="p-2 text-white text-center font-semibold text-nowrap">
