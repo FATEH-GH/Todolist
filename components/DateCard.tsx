@@ -21,7 +21,7 @@ const DateCard = ({ setDate, date }: DateCardProps) => {
         <h1 className="font-bold text-white text-center text-3xl sm:text-5xl  ">
           {days[date!.getDay()]}
         </h1>
-        <p className="p-2 text-white font-semibold text-nowrap">
+        <p className="p-2 text-white text-center font-semibold text-nowrap">
           {format(date!, "MMMM do yyyy")}
         </p>
       </div>

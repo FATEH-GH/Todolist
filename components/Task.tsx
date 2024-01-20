@@ -41,12 +41,13 @@ const Task = ({ task, id, ispinned, ischecked, settasks }: TaskProps) => {
   const handlecheck = async () => {
     isChecked ? setIsChecked(false) : setIsChecked(true);
 
-    const { error } = await supabase
+    const { data, error } = await supabase
       .from("Tasks")
       .update({ ischecked: !isChecked })
       .eq("id", id)
       .select();
     if (error) console.log(error);
+    else settasks(data);
   };
 
   return (
@@ -78,9 +79,6 @@ const Task = ({ task, id, ispinned, ischecked, settasks }: TaskProps) => {
           <ThreeDots />
         </DropdownMenuTrigger>
         <DropdownMenuContent className="bg-gray-800 flex flex-col gap-1 font-semibold text-white border-gray-900 overflow-hidden">
-          <DropdownMenuItem className="w-full flex items-center justify-center">
-            Edit
-          </DropdownMenuItem>
           <DropdownMenuItem
             className="w-full flex items-center justify-center"
             onClick={() => handledelete(id)}
